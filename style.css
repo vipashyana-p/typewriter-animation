@@ -1,0 +1,70 @@
+/*BASIC STYLING*/
+
+/*Import the fonts from Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap'); 
+
+:root {
+    --bg-color: white;
+}
+
+body {
+    font-family: "Source Code Pro", serif, monospace;
+}
+
+section {
+    display: flex;
+    padding-top: 4vh;
+    height: 96vh;
+    margin: 0 8rem;
+    min-height: fit-content;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-text .subtitle {
+    color: grey;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(3rem);
+    animation: fadeIn 2s ease 6s forwards;
+}
+
+.section-text .title {
+    /*the cursor*/
+    border-right: 2px black solid;
+    /*the title*/                             
+    margin-bottom: 1rem;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    /*the title is hidden before animation*/
+    visibility: hidden;                                        
+    animation: 
+        typing 4s steps(19) 1s forwards,
+        cursor 0.4s step-end infinite alternate;
+    animation-delay: 1s;
+}
+
+@keyframes typing {                       
+    from {
+        width: 0;
+        visibility: visible;
+    }
+    to {
+        width: 100%;
+        visibility: visible;
+    }
+}
+
+/*The text animation*/
+@keyframes cursor {
+    50% { border-color: transparent; } 
+}
+                                                               
+/*The cursor animation*/
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
